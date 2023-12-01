@@ -5,7 +5,7 @@ from rest_framework.viewsets import GenericViewSet
 
 from api.serializers import (CommentSerializer, FollowSerializer,
                              GroupSerializer, PostSerializer)
-from posts.models import Follow, Group, Post
+from posts.models import Group, Post
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -47,7 +47,7 @@ class FollowViewSet(mixins.CreateModelMixin,
     search_fields = ('following__username',)
 
     def get_queryset(self):
-        following = Follow.objects.filter(user_id=self.request.user.id)
+        following = self.request.user.following.all()
         return following
 
     def perform_create(self, serializer):

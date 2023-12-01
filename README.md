@@ -8,6 +8,13 @@ API для управления:
 - сообществами (просмотр)
 - подписками (просмотр, создание)
 
+Стек:
+Python 3.9: Django 3.2, DRF
+SQLite
+
+Авторы:
+авторы https://github.com/yandex-praktikum/api_final_yatube.git и [Kasylin](https://github.com/Kasylin)
+
 # Установка
 
 Клонировать репозиторий и перейти в него в командной строке:
